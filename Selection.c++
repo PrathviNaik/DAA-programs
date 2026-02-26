@@ -24,7 +24,7 @@ int main() {
             }
         }
 
-        // Swap
+        // Swap smallest element with current position
         int temp = arr[i];
         arr[i] = arr[minIndex];
         arr[minIndex] = temp;

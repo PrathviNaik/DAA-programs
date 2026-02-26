@@ -14,20 +14,17 @@ int main() {
         cin >> arr[i];
     }
 
-    // Selection Sort
-    for(int i = 0; i < n - 1; i++) {
-        int minIndex = i;
+    // Insertion Sort
+    for(int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
 
-        for(int j = i + 1; j < n; j++) {
-            if(arr[j] < arr[minIndex]) {
-                minIndex = j;
-            }
+        while(j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
         }
 
-        // Swap
-        int temp = arr[i];
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp;
+        arr[j + 1] = key;
     }
 
     cout << "Sorted elements: ";
